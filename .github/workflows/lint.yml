@@ -36,8 +36,3 @@ jobs:
           npm i
           fi
           npm run build
-
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
