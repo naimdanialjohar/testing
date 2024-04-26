@@ -10,11 +10,6 @@ on:
     branches:
       - master
 
-# Down scope as necessary via https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
-permissions:
-  checks: write
-  contents: write
-
 jobs:
   run-linters:
     name: Run linters
@@ -41,8 +36,4 @@ jobs:
           npm i
           fi
           npm run build
-
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
+          npm run lint
