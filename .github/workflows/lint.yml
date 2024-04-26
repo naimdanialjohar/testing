@@ -27,6 +27,7 @@ jobs:
       # ESLint and Prettier must be in `package.json`
       - name: Install Node.js dependencies
         run: |
+          npm cache clean --force
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
@@ -35,9 +36,4 @@ jobs:
           npm i
           fi
           npm run build
-
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          # prettier: true
+          npm run lint
