@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   // removed any type from useState
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<any>(0);
 
   return (
     <>
